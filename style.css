@@ -1,0 +1,236 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(img/1920x1080\ Resolution\ Abstract\ Lines\ HD\ Cool\ 1080P\ Laptop\ Full\ HD\ Wallpaper\ -\ Wallpapers\ Den.jpg);
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+h5 {
+    cursor: pointer;
+    position: relative;
+    margin-top: -25px;
+}
+
+.flip-back {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 1200ms;
+}
+
+.flip-container.active .flip-back{
+    transform: rotateY(180deg);
+}
+
+.login-container,
+.Gmail-container {
+    margin: 20px auto;
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.login-container {
+    backdrop-filter: blur(10px);
+    border-radius: 10%;
+    box-shadow: 8px 10px 30px rgb(40, 39, 39);
+    z-index: 0;
+}
+
+.Gmail-container {
+    backdrop-filter: blur(10px);
+    border-radius: 10%;
+    box-shadow: 8px 10px 30px rgb(40, 39, 39);
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+
+
+.toggle-back,
+.toggle-flipback {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-left: 245px;
+    margin-top: 30px;
+    width: 40px;
+    height: 10px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.toggle-back::before {
+    content: '↗';
+    font-size: 12px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translateX(0);
+    transition: transform 300ms ease;
+}
+
+.toggle-flipback::before{
+    content: '↖';
+    font-size: 12px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: transform 300ms ease;
+    transform: translateX(100%);
+}
+
+.toggle-back.active::before {
+    content: '↖';
+    transform: translateX(100%);
+}
+
+.toggle-flipback.active::before{
+    content: '↗';
+    transform: translateX(0);
+}
+
+.login-page{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.Gmail-page{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+#username,
+#Gmail {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 3px;
+    background-color: transparent;
+    color: white;
+}
+
+#password {
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 3px;
+    background-color: transparent;
+    color: white;
+}
+
+#message{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    margin-top: 5px;
+    max-width: 250px;
+    width: 100%;
+    height: 120px;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: left;
+    resize: none;
+    overflow-wrap: break-word;
+    background-color: transparent;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width:2px;
+    margin-right: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 50px;
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#button-submit,
+#send-button {
+    height: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 3px;
+    border: none;
+    background-color: rgb(19, 18, 18);
+    color: white;
+    transition: 0.2s ease-out background-color, color 0.2s;
+}
+
+#button-submit:active,
+#send-button:active {
+    background-color: white;
+    color: black;
+}
+
+.username-message,
+.Gmail-message {
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 10px;
+    font-size: 10;
+    color: red;
+}
+
+.password-message {
+    position: absolute;
+    margin-top: 115px;
+    margin-left: 10px;
+    font-size: 10;
+    color: red;
+}
+
+#link-forgot {
+    color: white;
+    text-decoration: none;
+}
